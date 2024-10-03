@@ -10,7 +10,7 @@
 </parent>
 <groupId>org.p0</groupId>
 <artifactId>calendly</artifactId>
-<version>0.0.1-SNAPSHOT</version>
+<version>0.0.2-SNAPSHOT</version>
 <name>calendly</name>
 <description>Demo project for Spring Boot</description>
 <url/>
@@ -40,11 +40,14 @@
         <artifactId>spring-boot-starter-test</artifactId>
         <scope>test</scope>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
     <dependency>
         <groupId>org.projectlombok</groupId>
         <artifactId>lombok</artifactId>
-        <optional>true</optional>
+        <version>1.18.30</version>
+        <scope>provided</scope>
     </dependency>
+
     <!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
     <dependency>
         <groupId>io.rest-assured</groupId>
@@ -57,8 +60,17 @@
         <artifactId>junit</artifactId>
         <scope>test</scope>
     </dependency>
-
-
+    <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-validation -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-validation</artifactId>
+        <version>3.0.2</version>
+    </dependency>
+    <dependency>
+        <groupId>org.springdoc</groupId>
+        <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+        <version>2.6.0</version>
+    </dependency>
 </dependencies>
 
 <build>
