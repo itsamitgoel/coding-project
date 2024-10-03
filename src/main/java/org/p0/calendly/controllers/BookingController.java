@@ -18,6 +18,7 @@ public class BookingController {
     @Autowired
     private BookingManagementService meetingManagementService;
 
+    // create booking
     @PostMapping
     public ResponseEntity<String> createBooking(@RequestBody @NonNull MeetingBookingRequest meetingBookingRequest) {
         // todo: input validations
@@ -26,7 +27,7 @@ public class BookingController {
         return ResponseEntity.status(201).body(response);
     }
 
-    // Get user by ID
+    // Get booking by bookingID
     @GetMapping("/{id}")
     public ResponseEntity<Booking> getBookingById(@PathVariable @NonNull String id) {
         Booking response = null;
@@ -36,6 +37,7 @@ public class BookingController {
         return ResponseEntity.status(200).body(response);
     }
 
+    // Get booking by userId
     @GetMapping("/user/{id}")
     public ResponseEntity<List<Booking>> getBookingByuserId(@PathVariable @NonNull String id) {
         List<Booking> response;
@@ -45,7 +47,7 @@ public class BookingController {
         return ResponseEntity.status(200).body(response);
     }
 
-    // Update user
+    // Update booking by bookingId
     @PutMapping("/{id}")
     public ResponseEntity<Booking> updateBooking(@PathVariable @NonNull String id, @RequestBody @NonNull Booking bookingDetails) {
         Booking response = null;
@@ -56,7 +58,7 @@ public class BookingController {
         return ResponseEntity.ok(response);
     }
 
-    // Delete user
+    // Delete booking by bookingId
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteBooking(@PathVariable String id) {
         meetingManagementService.deleteBooking(id);

@@ -20,7 +20,7 @@ public class OverlapController {
     @Autowired
     private AvailabilityOverlapService availabilityOverlapService;
 
-    // Create user
+    // get overlaps for comma separated userIds
     @GetMapping("/ids={id}")
     public ResponseEntity<ScheduleOverlapResponse> getOverlaps(@PathVariable @NonNull String id) {
         // todo: validate input
